@@ -1,0 +1,262 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.mapPanel {
+  flex: 2;
+  min-width: min(560px, 100%);
+}
+
+.mapShell {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(15, 35, 95, 0.2);
+  border: 1px solid rgba(8, 37, 64, 0.2);
+}
+
+.mapContainer {
+  width: 100%;
+  height: 520px;
+}
+
+.listPanel {
+  flex: 1;
+  min-width: min(320px, 100%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(4, 21, 45, 0.1);
+  border: 1px solid rgba(8, 37, 64, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .listPanel {
+    background: rgba(12, 26, 54, 0.9);
+    color: #edf2ff;
+  }
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.autorefresh {
+  font-size: 0.8rem;
+  color: #4a5a76;
+  font-weight: 500;
+}
+
+.summary {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #3f4c6b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .summary {
+    color: #c9d7ff;
+  }
+
+  .autorefresh {
+    color: #b5c9f5;
+  }
+}
+
+.error {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(193, 29, 29, 0.1);
+  color: #a30000;
+}
+
+.topRate {
+  margin-top: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #003f91, #00a7e1);
+  color: #fff;
+  padding: 16px;
+  box-shadow: 0 15px 25px rgba(0, 27, 82, 0.25);
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.topRate:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.topLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.topValue {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-block: 8px 4px;
+}
+
+.topRoute {
+  font-weight: 600;
+}
+
+.topSegment {
+  opacity: 0.85;
+  font-size: 0.9rem;
+}
+
+.list {
+  list-style: none;
+  margin-top: 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 460px;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: rgba(0, 94, 162, 0.4);
+  border-radius: 12px;
+}
+
+.listItem {
+  list-style: none;
+}
+
+.listItemButton {
+  width: 100%;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid rgba(8, 37, 64, 0.12);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.listItemButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.listItemButton:not(:disabled):hover {
+  border-color: rgba(0, 94, 162, 0.45);
+  box-shadow: 0 12px 24px rgba(4, 21, 45, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .listItemButton {
+    background: rgba(12, 26, 54, 0.85);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .listItemButton:not(:disabled):hover {
+    border-color: rgba(103, 197, 255, 0.45);
+  }
+}
+
+.listItemButton h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.rateValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b4f6c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rateValue {
+    color: #67c5ff;
+  }
+}
+
+.meta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #516079;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .meta {
+    color: #cbd4f5;
+  }
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  background: rgba(0, 94, 162, 0.08);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .message {
+    background: rgba(103, 197, 255, 0.15);
+  }
+}
+
+.emptyState {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  color: #516079;
+}
+
+@media (prefers-color-scheme: dark) {
+  .emptyState {
+    color: #cbd4f5;
+  }
+}
+
+:global(.toll-pin-icon) {
+  background: transparent;
+  border: none;
+}
+
+:global(.toll-pin) {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px rgba(0, 40, 80, 0.4);
+}
+
+:global(.toll-pin--free) {
+  background: #0f9d58;
+}
+
+:global(.toll-pin--standard) {
+  background: #0b6ff2;
+}
+
+:global(.toll-pin--surge) {
+  background: #d7263d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(.toll-pin) {
+    border-color: rgba(5, 10, 25, 0.85);
+  }
+}
